@@ -1,0 +1,55 @@
+<h1 id="setting-up-github-pages-and-using-jekyll">Setting up GitHub Pages and using Jekyll</h1>
+<ol>
+  <li>Create a repository either for your User Page or Project Page. Follow instruction in <a href="https://pages.github.com/">here</a>.</li>
+  <li>Setup your local machine for Ruby, Jekyll, and other dependencies. Go to <a href="#jekyll-setup">Jekyll Setup</a>.</li>
+  <li>Checkout repository to your local machine. &lt;github-username&gt;.github.io</li>
+  <li>Create a sample index.html in the root directory. Put some text such as “Hello World” in index.html. Then <a href="#run-jekyll">run Jekyll</a> locally.</li>
+  <li>Now, lets do the real blogging! Use Markdown to create your post. For a basic Markdown document, go <a href="http://daringfireball.net/projects/markdown/basics">here</a></li>
+  <li>Creating <a href="#post-using-markdown">post using Markdown</a></li>
+  <li>Now time to see the post - <a href="#jekyll-build-and-serve">build and serve</a></li>
+  <li>It is as what you expect, so we will upload to github for public viewing!</li>
+</ol>
+
+<h2 id="jekyll-setup">Jekyll Setup</h2>
+<p>In nutshell, one will need to install <a href="https://rvm.io/rvm/install">Ruby</a> in their machine, use <a href="http://bundler.io/">Bundler</a> as their package manager and finally install <a href="http://jekyllrb.com/">Jekyll</a>.</p>
+
+<p>For Ruby installation, I have used RVM which is the suggested way to install Ruby. One of the benefit with rvm is it allows one to run different version of Ruby on the local machine. Only catch, installation was not as smooth as I would anticipated, but then again with Google, nothing is too hard. These were some of my issues.</p>
+
+<ul>
+  <li>Manually importing mpapis public key, by searching for his key <a href="http://pgp.mit.edu/pks/lookup?search=mpapis&amp;op=index">here</a>. Then using pgp <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/Step_by_Step_Guide/s1-gnupg-import.html">import</a>.</li>
+  <li>Unfortunately, RVM Ruby installation does not bundle with Java Script Engine. With the help of <a href="http://stackoverflow.com/questions/9202324/execjs-could-not-find-a-javascript-runtime-but-execjs-and-therubyracer-are-in">stackoverflow</a>, I installed <a href="https://github.com/cowboyd/therubyracer">therubyracer</a>.</li>
+</ul>
+
+<h2 id="run-jekyll">Run Jekyll</h2>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">~/&lt;github-username&gt;.github.io <span class="nv">$ </span>jekyll serve
+<span class="c"># =&gt; Now browse to http://localhost:4000</span></code></pre></div>
+
+<h2 id="post-using-markdown">Post Using Markdown</h2>
+<p>I got the idea from <a href="http://jekyllrb.com/docs/posts/">here</a>. </p>
+
+<ol>
+  <li>Create a <strong>_post</strong> directory under the root.</li>
+  <li>Create a file with the following format <strong>YEAR-MONTH-DAY-title.md</strong> in <strong>_post</strong>. </li>
+  <li>Put my content in the file.</li>
+  <li>Modify the index.html with the below content:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">---
+title: Brian 
+---
+<span class="nt">&lt;h1&gt;</span>Blog Posts<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;posts&quot;</span><span class="nt">&gt;</span>
+  {% for post in site.posts %}
+    <span class="nt">&lt;li&gt;&lt;span&gt;</span>{{ post.date | date_to_string }}<span class="nt">&lt;/span&gt;</span> <span class="ni">&amp;raquo;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ post.url }}&quot;</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+
+<h2 id="jekyll-build-and-serve">Jekyll Build and Serve</h2>
+<p>To view the page, instruct Jekyll to construct the static page and start-up jekyll.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll build
+<span class="c"># =&gt; The current folder will be generated into ./_site</span>
+<span class="nv">$ </span>jekyll serve
+<span class="c"># =&gt; A development server will run at http://localhost:4000/</span></code></pre></div>
+

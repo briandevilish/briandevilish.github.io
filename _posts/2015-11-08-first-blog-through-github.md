@@ -1,0 +1,64 @@
+---
+title: Setting up GitHub Pages and using Jekyll
+---
+
+{{ page.title }}
+================
+1. Create a repository either for your User Page or Project Page. Follow instruction in [here](https://pages.github.com/).
+2. Setup your local machine for Ruby, Jekyll, and other dependencies. Go to [Jekyll Setup](#jekyll-setup).
+3. Checkout repository to your local machine. &lt;github-username&gt;.github.io
+4. Create a sample index.html in the root directory. Put some text such as "Hello World" in index.html. Then [run Jekyll](#run-jekyll) locally.
+5. Now, lets do the real blogging! Use Markdown to create your post. For a basic Markdown document, go [here](http://daringfireball.net/projects/markdown/basics)
+6. Creating [post using Markdown](#post-using-markdown)
+7. Now time to see the post - [build and serve](#jekyll-build-and-serve)
+8. It is as what you expect, so we will upload to github for public viewing!
+
+## Jekyll Setup 
+In nutshell, one will need to install [Ruby](https://rvm.io/rvm/install) in their machine, use [Bundler](http://bundler.io/) as their package manager and finally install [Jekyll](http://jekyllrb.com/).
+
+For Ruby installation, I have used RVM which is the suggested way to install Ruby. One of the benefit with rvm is it allows one to run different version of Ruby on the local machine. Only catch, installation was not as smooth as I would anticipated, but then again with Google, nothing is too hard. These were some of my issues.
+
+* Manually importing mpapis public key, by searching for his key [here](http://pgp.mit.edu/pks/lookup?search=mpapis&op=index). Then using pgp [import](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/Step_by_Step_Guide/s1-gnupg-import.html).
+* Unfortunately, RVM Ruby installation does not bundle with Java Script Engine. With the help of [stackoverflow](http://stackoverflow.com/questions/9202324/execjs-could-not-find-a-javascript-runtime-but-execjs-and-therubyracer-are-in), I installed [therubyracer](https://github.com/cowboyd/therubyracer).
+
+
+## Run Jekyll
+{% highlight bash %}
+~/<github-username>.github.io $ jekyll serve
+# => Now browse to http://localhost:4000
+{% endhighlight %}
+
+
+## Post Using Markdown
+I got the idea from [here](http://jekyllrb.com/docs/posts/). 
+
+1. Create a **_post** directory under the root.
+2. Create a file with the following format **YEAR-MONTH-DAY-title.md** in **_post**. 
+3. Put my content in the file.
+4. Modify the index.html with the below content:
+
+
+{% highlight html %}
+---
+title: Brian 
+---
+<h1>Blog Posts</h1>
+<ul class="posts">
+  {% raw %}{% for post in site.posts %}{% endraw %}
+    <li><span>{% raw %}{{ post.date | date_to_string }}{% endraw %}</span> &raquo; <a href="{% raw %}{{ post.url }}{% endraw %}">{% raw %}{{ post.title }}{% endraw %}</a></li>
+  {% raw %}{% endfor %}{% endraw %}
+</ul>
+{% endhighlight %}
+
+
+
+## Jekyll Build and Serve
+To view the page, instruct Jekyll to construct the static page and start-up jekyll.
+{% highlight bash %}
+$ jekyll build
+# => The current folder will be generated into ./_site
+$ jekyll serve
+# => A development server will run at http://localhost:4000/
+{% endhighlight %}
+
+
