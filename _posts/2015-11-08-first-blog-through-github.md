@@ -22,6 +22,8 @@ For Ruby installation, I have used RVM which is the suggested way to install Rub
 * Manually importing mpapis public key, by searching for his key [here](http://pgp.mit.edu/pks/lookup?search=mpapis&op=index). Then using pgp [import](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/Step_by_Step_Guide/s1-gnupg-import.html).
 * Unfortunately, RVM Ruby installation does not bundle with Java Script Engine. With the help of [stackoverflow](http://stackoverflow.com/questions/9202324/execjs-could-not-find-a-javascript-runtime-but-execjs-and-therubyracer-are-in), I installed [therubyracer](https://github.com/cowboyd/therubyracer).
 
+*Whenever starting a new shell windows/terminal, you will have to start RVM by running ``source /<rvm_installation_loc>/.rvm/scripts/rvm``*
+
 
 ## Run Jekyll
 {% highlight bash %}
@@ -79,5 +81,5 @@ git push
 {% endhighlight %}
 
 
-
+~~strike-trhough~~
 
