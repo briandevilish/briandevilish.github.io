@@ -81,5 +81,4 @@ git push
 {% endhighlight %}
 
 
-~~strike-trhough~~
 
