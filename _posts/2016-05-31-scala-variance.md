@@ -234,11 +234,11 @@ class BoxContravariant[-T](initial: T) {
 
 
 <h2>Useful references</h2>
-[Artima - Type Parameterization](http://www.artima.com/pins1ed/type-parameterization.html)
-[http://blog.kamkor.me/Covariance-And-Contravariance-In-Scala/](http://blog.kamkor.me/Covariance-And-Contravariance-In-Scala/)
-[https://blog.codecentric.de/en/2015/04/the-scala-type-system-parameterized-types-and-variances-part-2/](https://blog.codecentric.de/en/2015/04/the-scala-type-system-parameterized-types-and-variances-part-2/)
-[http://typelevel.org/blog/2016/02/04/variance-and-functors.html](http://typelevel.org/blog/2016/02/04/variance-and-functors.html)
-[Scala Specification - variance-annotations](http://www.scala-lang.org/files/archive/spec/2.11/04-basic-declarations-and-definitions.html#variance-annotations)
+1. [Artima - Type Parameterization](http://www.artima.com/pins1ed/type-parameterization.html)
+2. [http://blog.kamkor.me/Covariance-And-Contravariance-In-Scala/](http://blog.kamkor.me/Covariance-And-Contravariance-In-Scala/)
+3. [https://blog.codecentric.de/en/2015/04/the-scala-type-system-parameterized-types-and-variances-part-2/](https://blog.codecentric.de/en/2015/04/the-scala-type-system-parameterized-types-and-variances-part-2/)
+4. [http://typelevel.org/blog/2016/02/04/variance-and-functors.html](http://typelevel.org/blog/2016/02/04/variance-and-functors.html)
+5. [Scala Specification - variance-annotations](http://www.scala-lang.org/files/archive/spec/2.11/04-basic-declarations-and-definitions.html#variance-annotations)
 
 
 
