@@ -10,10 +10,18 @@ layout: default
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    padding: 1px;
+    margin: 5px 0;
+    text-align: left;
+    vertical-align: top;
 }
 th { background-color: #99ccff; }
 tr { background-color: #e6f2ff; }
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+}
 </style>
 </head>
 
@@ -42,7 +50,7 @@ tr { background-color: #e6f2ff; }
 </ol>
 
 <h2>Differences by code</h2>
-<table>
+<table border="1">
 <tr>
  <th>Instance variable of a class's object</th>
  <th>Instance variable of a class</th>
@@ -51,99 +59,136 @@ tr { background-color: #e6f2ff; }
 <tr>
  <td>
    <pre lang="ruby">
-	class InstanceVariableInRuby
-	  def set_instance_variable
-		puts "set_instance_variable\n"\
-		     "  @my_instance_variable=10"
-		@my_instance_variable=10
-	  end
+class InstanceVariableInRuby
+  def set_instance_variable
+    puts "set_instance_variable\n"\
+	     "  @my_instance_variable=10"
+    @my_instance_variable=10
+  end
 
-	  def access_instance_variable
-		puts "access_instance_variable:"\
-		     "#{@my_instance_variable}"
-	  end
-	end
+  def access_instance_variable
+    puts "access_instance_variable:"\
+         "#{@my_instance_variable}"
+  end
+end
 
-	class SubClassOfInstanceVariableInRuby < InstanceVariableInRuby
-	  def access_super_instance_variable
-		puts "access_super_instance_variable:"\
-		     " #{@my_instance_variable}"
-	  end
-	end
+class SubClassOfInstanceVariableInRuby < InstanceVariableInRuby
+  def access_super_instance_variable
+    puts "access_super_instance_variable:"\
+         " #{@my_instance_variable}"
+  end
+end
 
-	iv = InstanceVariableInRuby.new
-	iv.set_instance_variable
-	iv.access_instance_variable
-	sciv = SubClassOfInstanceVariableInRuby.new
-	sciv.set_instance_variable
-	sciv.access_super_instance_variable
+iv = InstanceVariableInRuby.new
+iv.set_instance_variable
+iv.access_instance_variable
+sciv = SubClassOfInstanceVariableInRuby.new
+sciv.set_instance_variable
+sciv.access_super_instance_variable
    </pre>
  </td>
  <td>
    <pre lang="ruby">
-	class ClassInstanceVariableInRuby
-	  @my_class_instance_variable
+class ClassInstanceVariableInRuby
+  @my_class_instance_variable
 
-	  def self.set_class_instance_variable
-		puts "set_class_instance_variable\n"\
-		     "  @my_class_instance_variable=20\n"\
-		     "  @my_class_instance_variable2=40"
-		@my_class_instance_variable=20
-		@my_class_instance_variable2=40
-	  end
+  def self.set_class_instance_variable
+    puts "set_class_instance_variable\n"\
+         "  @my_class_instance_variable=20\n"\
+         "  @my_class_instance_variable2=40"
+	@my_class_instance_variable=20
+	@my_class_instance_variable2=40
+  end
 
-	  def self.access_class_instance_variable
-		puts "access_class_instance_variable"\
-		     " @my_class_instance_variable: "\
-		     "#{@my_class_instance_variable}"
-		puts "access_class_instance_variable "\
-		     "@my_class_instance_variable2: "\
-		     "#{@my_class_instance_variable2}"
-	  end
-	end
+  def self.access_class_instance_variable
+    puts "access_class_instance_variable"\
+         " @my_class_instance_variable: "\
+         "#{@my_class_instance_variable}"
+    puts "access_class_instance_variable "\
+         "@my_class_instance_variable2: "\
+         "#{@my_class_instance_variable2}"
+  end
+end
 
-	ClassInstanceVariableInRuby.set_class_instance_variable
-	ClassInstanceVariableInRuby.access_class_instance_variable
+ClassInstanceVariableInRuby.set_class_instance_variable
+ClassInstanceVariableInRuby.access_class_instance_variable
    </pre>
  </td>
  <td>
    <pre lang="ruby">
-	class ClassVariableInRuby
-	  @@my_class_variable
+class ClassVariableInRuby
+  @@my_class_variable
 
-	  def set_class_variable
-		puts "set_class_variable\n"\
-		     "  @@my_class_variable=30"
-		@@my_class_variable = 30
-	  end
+  def set_class_variable
+    puts "set_class_variable\n"\
+         "  @@my_class_variable=30"
+	@@my_class_variable = 30
+  end
 
-	  def access_class_variable
-		puts "access_class_variable:"\
-		     " #{@@my_class_variable}"
-	  end
+  def access_class_variable
+    puts "access_class_variable:"\
+         " #{@@my_class_variable}"
+  end
 
-	  def self.set_class_variable
-		puts "self.set_class_variable\n"\
-		     "  @@my_class_variable+=40"
-		@@my_class_variable += 40
-	  end
+  def self.set_class_variable
+    puts "self.set_class_variable\n"\
+         "  @@my_class_variable+=40"
+	@@my_class_variable += 40
+  end
 
-	  def self.access_class_variable
-		puts "self.access_class_variable:"\
-		    " #{@@my_class_variable}"
-	  end
-	end
+  def self.access_class_variable
+    puts "self.access_class_variable:"\
+         " #{@@my_class_variable}"
+  end
+end
 
-	civ = ClassVariableInRuby.new
-	civ.set_class_variable
-	civ.access_class_variable
-	ClassVariableInRuby.access_class_variable
+civ = ClassVariableInRuby.new
+civ.set_class_variable
+civ.access_class_variable
+ClassVariableInRuby.access_class_variable
 
-	ClassVariableInRuby.set_class_variable
-	ClassVariableInRuby.access_class_variable
-	civ.access_class_variable
+ClassVariableInRuby.set_class_variable
+ClassVariableInRuby.access_class_variable
+civ.access_class_variable
    </pre>
  </td> 
+</tr>
+<tr>
+ <td>
+   <b>Output</b>
+   <pre>
+set_instance_variable
+  @my_instance_variable=10
+access_instance_variable:10
+set_instance_variable
+  @my_instance_variable=10
+access_super_instance_variable: 10
+   </pre>
+ </td>
+ <td>
+   <b>Output</b>
+   <pre>
+set_class_instance_variable
+  @my_class_instance_variable=20
+  @my_class_instance_variable2=40
+access_class_instance_variable @my_class_instance_variable: 20
+access_class_instance_variable @my_class_instance_variable2: 40
+   </pre>
+ </td>
+ <td>
+   <b>Output</b>
+   <pre>
+set_class_variable
+  @@my_class_variable=30
+access_class_variable: 30
+self.access_class_variable: 30
+self.set_class_variable
+  @@my_class_variable+=40
+self.access_class_variable: 70
+access_class_variable: 70
+
+   </pre>
+ </td>
 </tr>
 </table>
 
