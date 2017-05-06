@@ -22,7 +22,10 @@ Variance as defined in [Programming in Scala](https://www.artima.com/pins1ed/glo
 
 *A type parameter of a class or trait can be marked with a variance annotation, either covariant (+) or contravariant (-). Such variance annotations indicate how subtyping works for a generic class or trait. For example, the generic class List is covariant in its type parameter, and thus List[String] is a subtype of List[Any]. By default, i.e., absent a + or - annotation, type parameters are nonvariant.*
 
-Transforming statement above to code as below. I have defined a generic class CellNonvariant with type parameter T. The type parameter is nonvariant.
+Variance as defined in Wikipedia:
+*Variance refers to how subtyping between more complex types (list of Cats versus list of Animals, function returning Cat versus function returning Animal, ...) relates to subtyping between their components.*
+
+Transforming definition above to code as below. I have defined a generic class CellNonvariant with type parameter T. The type parameter is nonvariant.
 ```scala  class CellNonvariant[T] { } ```
 
 
@@ -176,15 +179,20 @@ In Scala, when one create a generic class/trait, one can define the variance of 
  </tr>
  <tr>
    <td>Nonvariant</td>
-   <td>Can only assign an exact instance type as per construsted parameterized type</td>
+   <td>Can only assign an exact instance type as per construsted parameterized type<br>
+    If I have a List[Dog], if it can only be substituted by another List[Dog] and no other type, then this kind of variance is called Nonvariant
+    <pre lang="scala">
+    val animal:List[Dog] = List[Dog]()
+    </pre>
+   </td>
  </tr>
  <tr>
    <td>Covariant</td>
    <td>
     Can only assign an sub type or exact instance type as per construsted parameterized type. <br>
-    If I have a List[Animal], can it be substitute List[Dog]? If this is true, then the this kind of variance is called Covariant.
+    If I have a List[Animal], can it be substituted by List[Dog]? If this is true, then the this kind of variance is called Covariant.
     <pre lang="scala">
-    val animal:List[Dog] = List[Animal]()
+    val animal:List[Animal] = List[Dog]()
     </pre>
    </td>
  </tr>
@@ -192,7 +200,7 @@ In Scala, when one create a generic class/trait, one can define the variance of 
    <td>Contravariant</td>
    <td>
     Can only assign an exact instance type as per construsted parameterized type. <br>
-    If I have a List[Dog], can it be sustitute List[Animal]? If this is true, then the this kind of variance is called Contravariant.
+    If I have a List[Dog], can it be substituted by List[Animal]? If this is true, then the this kind of variance is called Contravariant.
     <pre lang="scala">
     val animal:List[Dog] = List[Animal]()
     </pre>
@@ -205,8 +213,13 @@ In Scala, when one create a generic class/trait, one can define the variance of 
 * Use case for Contravariant - can only be used to annotate write-only values.
  
 
-<h2>How does variance annotation impact methods in class or trait?</h2>
+<h2>How does variance annotation impact method argument or method return type?</h2>
 Scala specification defines how variance behaves at various constructs. The variance of a method parameter is the opposite of the variance position of the enclosing parameter clause. This means if the enclosing is covariance, the opposite is contravariance. However, if the enclosing is nonvariance the opposite is to be itself.
+
+#####Read-only data types (sources) can be covariant; write-only data types (sinks) can be contravariant. Mutable data types which act as both sources and sinks should be invariant.
+
+
+####
 
 ```scala
 class BoxNonvariant[T](xObj: T) {
@@ -239,6 +252,7 @@ class BoxContravariant[-T](initial: T) {
 3. [https://blog.codecentric.de/en/2015/04/the-scala-type-system-parameterized-types-and-variances-part-2/](https://blog.codecentric.de/en/2015/04/the-scala-type-system-parameterized-types-and-variances-part-2/)
 4. [http://typelevel.org/blog/2016/02/04/variance-and-functors.html](http://typelevel.org/blog/2016/02/04/variance-and-functors.html)
 5. [Scala Specification - variance-annotations](http://www.scala-lang.org/files/archive/spec/2.11/04-basic-declarations-and-definitions.html#variance-annotations)
+6. [https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science))
 
 
 
