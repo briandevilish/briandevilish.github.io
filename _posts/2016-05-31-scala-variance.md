@@ -216,12 +216,10 @@ In Scala, when one create a generic class/trait, one can define the variance of 
 <h2>How does variance annotation impact method argument or method return type?</h2>
 Scala specification defines how variance behaves at various constructs. The variance of a method parameter is the opposite of the variance position of the enclosing parameter clause. This means if the enclosing is covariance, the opposite is contravariance. However, if the enclosing is nonvariance the opposite is to be itself.
 
-#####Read-only data types (sources) can be covariant; write-only data types (sinks) can be contravariant. Mutable data types which act as both sources and sinks should be invariant.
-
-
-####
+Read-only data types (sources) can be covariant; write-only data types (sinks) can be contravariant. Mutable data types which act as both sources and sinks should be invariant.
 
 ```scala
+
 class BoxNonvariant[T](xObj: T) {
   private[this] var obj = xObj
   def get = obj
@@ -242,6 +240,7 @@ class BoxContravariant[-T](initial: T) {
 //  def get = current
   def set(x: T) { current = x }
 }
+
 ```
 
 
