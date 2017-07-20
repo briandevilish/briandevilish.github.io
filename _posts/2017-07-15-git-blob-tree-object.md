@@ -8,6 +8,7 @@ layout: default
 <head>
 <style>
 pre {
+    background: #eee !important;
     display: block;
     font-family: monospace;
     white-space: pre;
