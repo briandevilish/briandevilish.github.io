@@ -88,7 +88,7 @@ Let's walk through a sample flow, in which a new GIT repository is created and a
 
 
 
-###When git command 'add' is issued, under the hood, GIT creates a blob object and update the index file. 
+### When git command 'add' is issued, under the hood, GIT creates a blob object and update the index file. 
 
 **GIT Blob Object**
 
@@ -111,7 +111,7 @@ Git Index file list files that has been added to git to be tracked. It is files 
 	</pre>
 Output above show's the object's mode bits, stage SHA-1 number and the object name.
 
-###When git command 'commit' is issued, under the hood, GIT creates a tree object and a commit object.
+### When git command 'commit' is issued, under the hood, GIT creates a tree object and a commit object.
 
 **GIT Tree Object**
 
