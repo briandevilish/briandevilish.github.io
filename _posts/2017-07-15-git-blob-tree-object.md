@@ -93,22 +93,24 @@ Let's walk through a sample flow, in which a new GIT repository is created and a
 **GIT Blob Object**
 
 A blob object is a file containing the content of the newly added file and its header. The blob object file name is an SHA-1 hash which is a checksum of the content of the newly added file and a header. The blob object is stored in .git/objects directory. You can see the newly added blob as below:
-	<pre>
+
+<pre>
 	~/git-sandbox$ find ./.git/objects -type f
 	./.git/objects/4a/b08b37d5bcb2a091cffba62102e4e875ae82b8
 	~/git-sandbox$ git cat-file -t 4ab08b37d5bcb2a091cffba62102e4e875ae82b8
 	blob
 	~/git-sandbox$ git cat-file -p 4ab08b37d5bcb2a091cffba62102e4e875ae82b8
 	some random text
-	</pre>
+</pre>
 
 **GIT Index file**
 
 Git Index file list files that has been added to git to be tracked. It is files in staging state and are the set of files to be commited on the next commit command. To see the index file use the git-ls-files command.
-	<pre>
+
+<pre>
 	~/git-sandbox$ git ls-files -s
 	100644 4ab08b37d5bcb2a091cffba62102e4e875ae82b8 0	file-1.txt
-	</pre>
+</pre>
 
 Output above show's the object's mode bits, stage SHA-1 number and the object name.
 
@@ -117,17 +119,19 @@ Output above show's the object's mode bits, stage SHA-1 number and the object na
 **GIT Tree Object**
 
 An object to group references to blob object or/and other tree object. Each references is a SHA-1 pointer. Taking above example, the newly created tree object has one SHA-1 reference of a blob object.
-	<pre>
+
+<pre>
 	~/git-sandbox$ git cat-file -t 7494fdaa460caa27ea60565a85a637bba27a7ddb
 	tree
 	~/git-sandbox$ git cat-file -p 7494fdaa460caa27ea60565a85a637bba27a7ddb
 	100644 blob 4ab08b37d5bcb2a091cffba62102e4e875ae82b8	file-1.txt
-	</pre>
+</pre>
 
 **GIT Commit Object**
 
 An object to contain information of the commit i.e. the tree object, author, commit comment and commit time.
-	<pre>
+
+<pre>
 	~/git-sandbox$ git cat-file -t f136f9d1b01b03717a6388f449e21fa9bac999f5
 	commit
 	~/git-sandbox$ git cat-file -p f136f9d1b01b03717a6388f449e21fa9bac999f5
@@ -136,7 +140,8 @@ An object to contain information of the commit i.e. the tree object, author, com
 	committer Brian <brian@brian.com> 1500382747 +0800
 	
 	initial commit for file-1
-	</pre>
+</pre>
+
 
 [Ref 1 - https://git-scm.com/book/en/v2/Git-Internals-Git-Objects](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
 [Ref 2 - http://shafiulazam.com/gitbook/1_the_git_object_model.html](http://shafiulazam.com/gitbook/1_the_git_object_model.html)
