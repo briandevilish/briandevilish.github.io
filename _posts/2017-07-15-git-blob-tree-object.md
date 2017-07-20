@@ -109,6 +109,7 @@ Git Index file list files that has been added to git to be tracked. It is files 
 	~/git-sandbox$ git ls-files -s
 	100644 4ab08b37d5bcb2a091cffba62102e4e875ae82b8 0	file-1.txt
 	</pre>
+
 Output above show's the object's mode bits, stage SHA-1 number and the object name.
 
 ### When git command 'commit' is issued, under the hood, GIT creates a tree object and a commit object.
@@ -126,7 +127,7 @@ An object to group references to blob object or/and other tree object. Each refe
 **GIT Commit Object**
 
 An object to contain information of the commit i.e. the tree object, author, commit comment and commit time.
-<pre>
+	<pre>
 	~/git-sandbox$ git cat-file -t f136f9d1b01b03717a6388f449e21fa9bac999f5
 	commit
 	~/git-sandbox$ git cat-file -p f136f9d1b01b03717a6388f449e21fa9bac999f5
@@ -135,7 +136,7 @@ An object to contain information of the commit i.e. the tree object, author, com
 	committer Brian <brian@brian.com> 1500382747 +0800
 	
 	initial commit for file-1
-</pre>
+	</pre>
 
 [Ref 1 - https://git-scm.com/book/en/v2/Git-Internals-Git-Objects](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
 [Ref 2 - http://shafiulazam.com/gitbook/1_the_git_object_model.html](http://shafiulazam.com/gitbook/1_the_git_object_model.html)
