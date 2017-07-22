@@ -33,13 +33,13 @@ pre {
 * [Summary of Git Reset on Working Directory, Index and HEAD](#summary-of-git-reset-on-working-directory-index-and-head)
  * [Git reset with path](#git-reset-with-path)
  * [Git reset without path](#git-reset-without-path)
-* [Summary of Git Checkout on Working Directory, Index and HEAD](summary-of-git-checkout-on-working-directory-index-and-head)
+* [Summary of Git Checkout on Working Directory, Index and HEAD](#summary-of-git-checkout-on-working-directory-index-and-head)
 * [Useful Git commands to check file states](#useful-git-commands-to-check-file-states)
  * [What is in the index?](#what-is-in-the-index)
  * [What is in the HEAD?](#what-is-in-the-head)
-* [Revert Scenario and their associated Git command](revert-scenario-and-their-associated-git-command)
- * [Revert changes that has not been committed to Git repository](revert-changes-that-has-not-been-committed-to-git-repository)
- * [Revert changes that has been staged but not committed](revert-changes-that-has-been-staged-but-not-committed)
+* [Revert Scenario and their associated Git command](#revert-scenario-and-their-associated-git-command)
+ * [Revert changes that has not been committed to Git repository](#revert-changes-that-has-not-been-committed-to-git-repository)
+ * [Revert changes that has been staged but not committed](#revert-changes-that-has-been-staged-but-not-committed)
 
 ## Definition
 Pre-requisite to understanding this is reading my [previous page](/2017/07/15/git-blob-tree-object.html) on definition of working directory and index file. In addition, we would also need to understand the HEAD reference or HEAD tree.
