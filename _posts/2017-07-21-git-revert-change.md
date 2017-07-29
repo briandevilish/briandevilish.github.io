@@ -274,10 +274,10 @@ To revert the third last commit, run the following:
 If revert resulted in conflict a similar message as below will be displayed:
 
 <pre>
-error: could not revert dcac69d... initial file#3
-hint: after resolving the conflicts, mark the corrected paths
-hint: with 'git add <paths>' or 'git rm <paths>'
-hint: and commit the result with 'git commit'
+ error: could not revert dcac69d... initial file#3
+ hint: after resolving the conflicts, mark the corrected paths
+ hint: with 'git add <paths>' or 'git rm <paths>'
+ hint: and commit the result with 'git commit'
 </pre>
 
 To abort the revert, issue `git revert --abort`
