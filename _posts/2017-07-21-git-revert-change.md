@@ -26,10 +26,6 @@ pre {
 .changedtextcolor {
     color: green
 }
-.alerttextcolor {
-    color: red
-}
-
 </style>
 </head>
 
@@ -373,7 +369,6 @@ This is an interesting scenario as the commit to be reverted is actually a commi
 If you look further into those files, you will not see the usual merge conflict character such as ============. 
 
 To revert, just made necessary changes to those impacted files. Then either use git add or git rm. Once complete issue `git revert --continue`.
-
 
 ## Useful Git commands to check file states
 ### What is in the index?
