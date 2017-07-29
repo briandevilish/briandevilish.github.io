@@ -287,17 +287,17 @@ The simplest scenario is reverting the last commit (required working directory t
 
 <pre>
 ~/git-sandbox$ git log --oneline --decorate --graph
-* 99c8630 (HEAD -> master) additional line in file#1 and file#2
-* e75fc8f Initial commit file #2
-* 38d5e4a Initial commit file #1
+ * 99c8630 (HEAD -> master) additional line in file#1 and file#2
+ * e75fc8f Initial commit file #2
+ * 38d5e4a Initial commit file #1
 ~/git-sandbox$ git revert HEAD
 [master e86b109] Revert "additional line in file#1 and file#2"
  2 files changed, 2 deletions(-)
 ~/git-sandbox$ git log --oneline --decorate --graph
-* e86b109 (HEAD -> master) Revert "additional line in file#1 and file#2"
-* 99c8630 additional line in file#1 and file#2
-* e75fc8f Initial commit file #2
-* 38d5e4a Initial commit file #1
+ * e86b109 (HEAD -> master) Revert "additional line in file#1 and file#2"
+ * 99c8630 additional line in file#1 and file#2
+ * e75fc8f Initial commit file #2
+ * 38d5e4a Initial commit file #1
 </pre>
 
 #### What are the changes in Working Directory, Index and HEAD?
