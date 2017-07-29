@@ -34,11 +34,11 @@ pre {
     * [Git reset with path](#git-reset-with-path)
     * [Git reset without path](#git-reset-without-path)
 * [Summary of Git Checkout on Working Directory, Index and HEAD](#summary-of-git-checkout-on-working-directory-index-and-head)
-* [Summary of Git Revert]
-    * [Scenario 0: abort revert](#scenario-0-abort-revert)
-    * [Scenario 1: revert the last commit](#scenario-1-revert-the-last-commit)
-    * [Scenario 2: revert the n-th commit](#scenario-2-revert-the-n-th-commit)
-    * [Scenario 3: revert n-th commit which is also an initial file commit](#scenario-3-revert-n-th-commit-which-is-also-an-initial-file-commit)
+* [Summary of Git Revert](#summary-of-git-revert)
+    * [Scenario 0: abort revert](#scenario-0---abort-revert)
+    * [Scenario 1: revert the last commit](#scenario-1---revert-the-last-commit)
+    * [Scenario 2: revert the n-th commit](#scenario-2---revert-the-n-th-commit)
+    * [Scenario 3: revert n-th commit which is also an initial file commit](#scenario-3---revert-n-th-commit-which-is-also-an-initial-file-commit)
 * [Useful Git commands to check file states](#useful-git-commands-to-check-file-states)
     * [What is in the index?](#what-is-in-the-index)
     * [What is in the HEAD?](#what-is-in-the-head)
@@ -266,11 +266,13 @@ Use `git revert -n <commit>` if you want to prevent instant commit of the patch.
 Before learning how to revert, let's learn how to abort a revert command if the operation goes haywire. 
 
 To revert the third last commit, run the following:
+
 <pre>
 ~/git-sandbox$ git revert HEAD~2
 </pre>
 
 If revert resulted in conflict a similar message as below will be displayed:
+
 <pre>
 error: could not revert dcac69d... initial file#3
 hint: after resolving the conflicts, mark the corrected paths
@@ -356,6 +358,7 @@ hint: and commit the result with 'git commit'
 </pre>
 
 You can check within the .git directory, GIT has captured the original and revert head.
+
 <pre>
 ~/git-sandbox$ cat ./.git/REVERT_HEAD
 1ccee031807973c7af984e25c1e88ff85af4bf9e
