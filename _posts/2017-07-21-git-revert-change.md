@@ -273,19 +273,19 @@ To revert the third last commit, run the following:
 
 If revert resulted in conflict a similar message as below will be displayed:
 
-<pre>
- error: could not revert dcac69d... initial file#3
- hint: after resolving the conflicts, mark the corrected paths
- hint: with 'git add <paths>' or 'git rm <paths>'
- hint: and commit the result with 'git commit'
-</pre>
+```
+error: could not revert dcac69d... initial file#3
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+```
 
 To abort the revert, issue `git revert --abort`
 
 ### Scenario 1 - revert the last commit
 The simplest scenario is reverting the last commit (required working directory to be clean). In the example below, we are removing commit 99c8630 which modified file-1.txt and file-2.txt.
 
-<pre>
+```
 ~/git-sandbox$ git log --oneline --decorate --graph
  * 99c8630 (HEAD -> master) additional line in file#1 and file#2
  * e75fc8f Initial commit file #2
@@ -298,7 +298,7 @@ The simplest scenario is reverting the last commit (required working directory t
  * 99c8630 additional line in file#1 and file#2
  * e75fc8f Initial commit file #2
  * 38d5e4a Initial commit file #1
-</pre>
+```
 
 #### What are the changes in Working Directory, Index and HEAD?
 <table border="1">
@@ -332,7 +332,7 @@ In this case, you commited the file a few time, and found out that the n-th comm
 
 For example below, file#2 has been commited three times, I would like to revert the 3rd last commit (i.e. short SHA-1 of 1ccee03).
 
-<pre>
+```
 ~/git-sandbox$ git log --oneline
 3aeefdb 5th line file#2
 a78ad6c 4th line file#2
@@ -355,7 +355,7 @@ hint: and commit the result with 'git commit'
 #
 #	both modified:   file-2.txt
 #
-</pre>
+```
 
 You can check within the .git directory, GIT has captured the original and revert head.
 
