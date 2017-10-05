@@ -74,7 +74,7 @@ In summary the three important concepts as defined in [Git Reset Demystified](ht
  <td>Pointer to the last commit of the current branch reference, i.e. pointer to the last commit you made.</td>
 </tr>
 <tr>
- <td>Index</td>
+ <td>Index/Staging Area/Cache</td>
  <td>Proposed next commit snapshot.</td>
 </tr>
 <tr>
