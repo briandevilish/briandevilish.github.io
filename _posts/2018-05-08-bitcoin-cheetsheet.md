@@ -1,3 +1,5 @@
+---
+title: Bitcoin tips include command line help and format of bitcoin protocol
 layout: default
 ---
 
