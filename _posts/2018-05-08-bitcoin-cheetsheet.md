@@ -31,6 +31,8 @@ pre {
 
 ## Handy links:
 
+
+* [Bitcoin core config generator](https://jlopp.github.io/bitcoin-core-config-generator)
 * [List of address prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 ## Pay-to-PubKey-Hash (P2PKH)
