@@ -52,8 +52,8 @@ scriptPubKey: OP_DUP OP_HASH160 404371705fa9bd789a2fcd52d2c580b65d35549d OP_EQUA
 
 * 
 <pre>
-scriptPubKey: OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
-scriptSig: <sig> <pubKey>
+scriptPubKey: OP_DUP OP_HASH160 &lt;pubKeyHash&gt; OP_EQUALVERIFY OP_CHECKSIG
+scriptSig: &lt;sig&gt; &lt;pubKey&gt;
 </pre>
 
 * Payment address comprising a hashed public key.
