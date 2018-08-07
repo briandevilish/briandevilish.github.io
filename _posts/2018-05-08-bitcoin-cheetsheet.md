@@ -36,6 +36,25 @@ pre {
 * [List of address prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 ## Pay-to-PubKey-Hash (P2PKH)
+* [Transaction](https://en.bitcoin.it/wiki/Transaction)
+* Example of a Bitcoin transaction with 1 input and 1 output only
+<pre>
+Input:
+Previous tx: f5d8ee39a430901c91a5917b9f2dc19d6d1a0e9cea205b009ca73dd04470b9a6
+Index: 0
+scriptSig: 304502206e21798a42fae0e854281abd38bacd1aeed3ee3738d9e1446618c4571d10
+90db022100e2ac980643b0b82c0e88ffdfec6b64e3e6ba35e7ba5fdd7d5d6cc8d25c6b241501
+
+Output:
+Value: 5000000000
+scriptPubKey: OP_DUP OP_HASH160 404371705fa9bd789a2fcd52d2c580b65d35549d OP_EQUALVERIFY OP_CHECKSIG
+</pre>
+
+* 
+<pre>
+scriptPubKey: OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
+scriptSig: <sig> <pubKey>
+</pre>
 
 * Payment address comprising a hashed public key.
 * Can be seen in the *address* attribute of UTXO, use 'listunspent'.
@@ -56,6 +75,10 @@ pre {
         "solvable" : true
     }
 </pre>
+
+
+
+
 
 * To see the public key of P2PKH, use 'validateaddress mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou':
 
