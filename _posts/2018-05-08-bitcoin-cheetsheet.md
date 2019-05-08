@@ -36,20 +36,29 @@ pre {
 * [List of address prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 
-## Serialization format [source] (https://github.com/jimmysong/programmingbitcoin/blob/master/ch04.asciidoc)
+## Serialization format 
+* [source](https://github.com/jimmysong/programmingbitcoin/blob/master/ch04.asciidoc)
 * public key = private key * Generator Point (P=eG)
 * standard for serializing ECDSA public keys is Standards for Efficient Cryptography (SEC), which could be uncompressed or compressed.
-
 * Uncompressed SEC format:
 1. Start with the prefix byte, which is 0x04.
 2. Next, append the x coordinate in 32 bytes as a big-endian integer.
 3. Next, append the y coordinate in 32 bytes as a big-endian integer.
-
 * Compressed SEC Format: 
 1. Start with the prefix byte. If y is even, its 0x02; otherwise, its 0x03.
 2. Next, append the x coordinate in 32 bytes as a big-endian integer.
-
 * Standard for serializing signatures is called Distinguished Encoding Rules (DER) format. 
+
+* Wallet Import Format (WIF) is a serialization of the private key.
+* Private key length is 256-bit number (32 bytes).
+* WIF format is created:
+1. For mainnet private keys, start with the prefix 0x80, for testnet 0xef.
+2. Encode the secret in 32-byte big-endian.
+3. If the SEC format used for the public key address was compressed, add a suffix of 0x01.
+4. Combine the prefix from #1, serialized secret from #2, and suffix from #3.
+5. Do a hash256 of the result from #4 and get the first 4 bytes.
+6. Take the combination of #4 and #5 and encode it in Base58.
+
 * DER signature format is:
 1. Start with the 0x30 byte.
 2. Encode the length of the rest of the signature (usually 0x44 or 0x45) and append.
