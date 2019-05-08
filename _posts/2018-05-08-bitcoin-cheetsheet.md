@@ -49,8 +49,13 @@ pre {
 2. Next, append the x coordinate in 32 bytes as a big-endian integer.
 * Standard for serializing signatures is called Distinguished Encoding Rules (DER) format. 
 
-* Wallet Import Format (WIF) is a serialization of the private key.
+* Private key can be serialized as raw, hex, Wallet Import Format (WIF) or wif-compressed.
 * Private key length is 256-bit number (32 bytes).
+* Example of same key different formats:
+** HEX: 1e99423a4ed27608a15a2616a2b0e9e52ced330ac530edcc32c8ffc6a526aedd
+** WIF: 5J3mBbAH58CpQ3Y5RNJpUKPE62SQ5tfcvU2JpbnkeyhfsYB1Jcn (prefix with 5)
+** WIF-compressed: KxFC1jmwwCoACiCAWZ3eXa96mBM6tb3TYzGmf6YwgdGWZgawvrtJ (prefix with K or L)
+* WIF is Base58 checksum-encoded format.
 * WIF format is created:
 1. For mainnet private keys, start with the prefix 0x80, for testnet 0xef.
 2. Encode the secret in 32-byte big-endian.
