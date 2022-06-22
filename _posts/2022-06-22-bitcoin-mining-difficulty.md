@@ -25,11 +25,14 @@ pre {
 }
 </style>
 </head>
-## Difficulty
-[How Is Difficulty Calculated] (https://bitcoin.stackexchange.com/questions/5838/how-is-difficulty-calculated)
-[Bitcoin Target and Difficulty] (https://medium.com/@dongha.sohn/bitcoin-6-target-and-difficulty-ee3bc9cc5962)
-[Bitcoin book - Mining and Consensus] (https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch10.asciidoc)
 
+</br>
+## Difficulty
+
+[How Is Difficulty Calculated](https://bitcoin.stackexchange.com/questions/5838/how-is-difficulty-calculated)
+[Bitcoin Target and Difficulty](https://medium.com/@dongha.sohn/bitcoin-6-target-and-difficulty-ee3bc9cc5962)
+[Bitcoin book - Mining and Consensus](https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch10.asciidoc)
+</br>
 Difficulty in Bitcoin measure the difficulty to find a hash below a given target. The formula below calculate the difficulty. 
 MAX_TARGET is the ‘first difficulty’, which is the level of difficulty set when the Bitcoin blockchain first run, which means the value of ‘1’ and is written as ‘1d00ffff’ in four bytes.
 
@@ -75,7 +78,8 @@ New Target = Old Target * (Actual Time of Last 2016 Blocks / 20160 minutes)
 ```
 
 ## Hashrate
-[How Are Bitcoins Difficulty And Hashrate Calculated] (https://minerdaily.com/2021/how-are-bitcoins-difficulty-and-hash-rate-calculated/)
+[How Are Bitcoins Difficulty And Hashrate Calculated](https://minerdaily.com/2021/how-are-bitcoins-difficulty-and-hash-rate-calculated/)
+</br>
 Bitcoin hashrate is the hashes per second from the miners to solve the next block puzzle. We can estimate the network hashrate using the current difficulty.
 In this equation the probability that a miner finds a block is 1/(2^32), meaning that the average unique hash attempts to find a block is approximately 2^32. This hash work is then multiplied by the current difficulty, over the 600 second (10 minute) target block pace. 
 ```
