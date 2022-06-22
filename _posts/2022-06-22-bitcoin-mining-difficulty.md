@@ -28,10 +28,10 @@ pre {
 
 </br>
 ## Difficulty
-
-[How Is Difficulty Calculated](https://bitcoin.stackexchange.com/questions/5838/how-is-difficulty-calculated)
-[Bitcoin Target and Difficulty](https://medium.com/@dongha.sohn/bitcoin-6-target-and-difficulty-ee3bc9cc5962)
-[Bitcoin book - Mining and Consensus](https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch10.asciidoc)
+</br>
+[How Is Difficulty Calculated](https://bitcoin.stackexchange.com/questions/5838/how-is-difficulty-calculated) </br>
+[Bitcoin Target and Difficulty](https://medium.com/@dongha.sohn/bitcoin-6-target-and-difficulty-ee3bc9cc5962) </br>
+[Bitcoin book - Mining and Consensus](https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch10.asciidoc) </br>
 </br>
 Difficulty in Bitcoin measure the difficulty to find a hash below a given target. The formula below calculate the difficulty. 
 MAX_TARGET is the ‘first difficulty’, which is the level of difficulty set when the Bitcoin blockchain first run, which means the value of ‘1’ and is written as ‘1d00ffff’ in four bytes.
